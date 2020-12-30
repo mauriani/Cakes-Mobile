@@ -21,6 +21,7 @@ export const Image = styled.Image`
 `;
 
 export const Card = styled.View`
+  flex-direction: column;
   height: 200px;
   width: 200px;
   margin-top: 20px;
@@ -28,3 +29,10 @@ export const Card = styled.View`
   background: #fff;
   margin-left: 10px;
 `;
+
+export const Img = styled.Image`
+  height: 100px;
+  margin-top: 5px;
+`;
+export const Info = styled.View``;
+export const TitleProduct = styled.Text``;

@@ -2,7 +2,15 @@ import React from 'react';
 import {Text} from 'react-native';
 
 //import Header from '../../components/Header';
-import {Container, Header, Image, Card} from './styles';
+import {
+  Container,
+  Header,
+  Image,
+  Card,
+  Img,
+  Info,
+  TitleProduct,
+} from './styles';
 
 function Home() {
   return (
@@ -12,7 +20,12 @@ function Home() {
       </Header>
 
       <Card>
-        <Img />
+        <Img
+          source={{
+            uri:
+              'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          }}
+        />
         <Info>
           <TitleProduct>Bolo de Banana</TitleProduct>
         </Info>

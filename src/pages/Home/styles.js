@@ -10,7 +10,7 @@ export const Header = styled.SafeAreaView`
   align-items: center;
   justify-content: center;
   padding-top: ${30 + getStatusBarHeight(true)}px;
-  background: #ccc;
+  background: #d1a89f;
   height: 150px;
   border-radius: 15px;
 `;
@@ -18,4 +18,13 @@ export const Header = styled.SafeAreaView`
 export const Image = styled.Image`
   height: 120px;
   width: 280px;
+`;
+
+export const Card = styled.View`
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: #fff;
+  margin-left: 10px;
 `;

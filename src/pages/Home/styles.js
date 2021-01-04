@@ -1,38 +1,55 @@
 import styled from 'styled-components/native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #190f17;
+  background-color: #f5f5f5;
 `;
 
-export const Header = styled.SafeAreaView`
-  align-items: center;
-  justify-content: center;
-  padding-top: ${30 + getStatusBarHeight(true)}px;
-  background: #d1a89f;
-  height: 150px;
-  border-radius: 15px;
+export const CardProduct = styled.View`
+  background: #f5f5f5;
+  height: 250px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 5px;
 `;
 
 export const Image = styled.Image`
-  height: 120px;
-  width: 280px;
+  height: 140px;
+  border-radius: 3px;
 `;
 
-export const Card = styled.View`
-  flex-direction: column;
-  height: 200px;
-  width: 200px;
-  margin-top: 20px;
-  border-radius: 20px;
-  background: #fff;
-  margin-left: 10px;
+export const Details = styled.View`
+  flex-direction: row;
+  align-items: center;
 `;
 
-export const Img = styled.Image`
-  height: 100px;
-  margin-top: 5px;
+export const TitleProduct = styled.Text`
+  flex: 1;
+  margin-top: 3px;
+  color: #111;
 `;
-export const Info = styled.View``;
-export const TitleProduct = styled.Text``;
+
+export const TitlePrice = styled.Text`
+  flex: 1;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  color: #111;
+`;
+
+export const ButtonAdd = styled.TouchableOpacity`
+  height: 40px;
+  background-color: pink;
+  border-radius: 10px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonAddText = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+  color: #111;
+`;

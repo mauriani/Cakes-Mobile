@@ -37,7 +37,7 @@ export default class Home extends Component {
         <ScrollView>
           {products.map((product) => (
             <CardProduct key={String(product.id)}>
-              <Image source={product.image} resizeMode="contain" />
+              <Image source={{uri: product.image}} resizeMode="cover" />
 
               <Details>
                 <TitleProduct>{product.title}</TitleProduct>

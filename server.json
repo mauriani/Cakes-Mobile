@@ -30,13 +30,13 @@
       "id": 1,
       "title": "Bolo de chocolate",
       "price": 50.9,
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=680&q=80"
+      "image": "https://images.unsplash.com/photo-1576243049154-ac7712b09797?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=761&q=80"
     },
     {
       "id": 2,
       "title": "Bolo de Coco",
       "price": 139.9,
-      "image": "https://images.unsplash.com/photo-1561702856-b4ec96854ed8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80"
+      "image": "https://images.unsplash.com/photo-1497681204192-eb12c0702305?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
     },
     {
       "id": 3,
@@ -48,19 +48,19 @@
       "id": 5,
       "title": "Bolo de Morango com Recheio de coco",
       "price": 139.9,
-      "image": "https://images.unsplash.com/photo-1583852542295-05d29d3cff55?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80"
+      "image": "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80"
     },
     {
       "id": 6,
       "title": "Bolo de Doce de Leite",
       "price": 119.9,
-      "image": "https://images.unsplash.com/photo-1608538242850-dad61fa8b3f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+      "image": "https://images.unsplash.com/photo-1601409751311-cbecfe223af4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
     },
     {
       "id": 4,
       "title": "Torta de Limão",
       "price": 179.9,
-      "image": "https://images.unsplash.com/photo-1600856450294-92b3a7062a3c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80"
+      "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80"
     }
   ]
 }

@@ -11,17 +11,12 @@ import Cart from './pages/Cart';
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: '#7159c1',
-          },
-          headerTintColor: '#fff',
-          headerBackTitleVisible: false,
-        }}>
-        <Stack.Screen name="Home" component={Home} options={{title: 'Cakes'}} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>

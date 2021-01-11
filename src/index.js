@@ -10,7 +10,7 @@ export default function App() {
       <StatusBar
         backgroundColor="transparent"
         translucent
-        barStyle="light-content"
+        barStyle="dark-content"
       />
       <Routes />
     </SafeAreaProvider>

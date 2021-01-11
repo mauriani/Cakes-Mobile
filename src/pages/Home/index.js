@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-
-import CakesTraditional from '../../components/CakesTraditional';
-import CakesCustom from '../../components/CakesCustom';
+import {ScrollView} from 'react-native';
 import Header from '../../components/Header';
+import Categories from '../../components/Categories';
 
 import {Container} from './styles';
 
@@ -13,8 +12,9 @@ export default class Home extends Component {
     return (
       <Container>
         <Header />
-        <CakesTraditional />
-        <CakesCustom />
+        <ScrollView Vertical={true}>
+          <Categories />
+        </ScrollView>
       </Container>
     );
   }

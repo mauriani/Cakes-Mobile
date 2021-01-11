@@ -26,35 +26,6 @@
     }
   ],
   "products": {
-    "custom": [
-      {
-        "id": 1,
-        "title": "Bolo Unicórnio",
-        "price": 50.9,
-        "image": "https://s2.glbimg.com/XiTUs5F-S2EDTkqOVMRy5euUY28=/smart/e.glbimg.com/og/ed/f/original/2019/05/27/bolo-de-unicornio_2.jpg"
-      },
-
-      {
-        "id": 2,
-        "title": "Bolo Ovelha",
-        "price": 50.9,
-        "image": "https://i.pinimg.com/originals/44/cc/45/44cc457ff4e697c2eb4b0b5fddde00a6.jpg"
-      },
-
-      {
-        "id": 3,
-        "title": "Bolo Netflix",
-        "price": 50.9,
-        "image": "https://i.pinimg.com/236x/7b/e3/29/7be32927a92a146f450910906916f8fb.jpg"
-      },
-
-      {
-        "id": 3,
-        "title": "Bolo Harry Potter",
-        "price": 50.9,
-        "image": "https://i.pinimg.com/236x/80/70/e6/8070e6f9e3f85e0d48179ea7920b41cd.jpg"
-      }
-    ],
     "traditional": [
       {
         "id": 1,
@@ -91,6 +62,55 @@
         "title": "Torta de Limão",
         "price": 179.9,
         "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80"
+      }
+    ],
+
+    "custom": [
+      {
+        "id": 1,
+        "title": "Bolo Unicórnio",
+        "price": 50.9,
+        "image": "https://s2.glbimg.com/XiTUs5F-S2EDTkqOVMRy5euUY28=/smart/e.glbimg.com/og/ed/f/original/2019/05/27/bolo-de-unicornio_2.jpg"
+      },
+
+      {
+        "id": 2,
+        "title": "Bolo Ovelha",
+        "price": 50.9,
+        "image": "https://i.pinimg.com/originals/44/cc/45/44cc457ff4e697c2eb4b0b5fddde00a6.jpg"
+      },
+
+      {
+        "id": 3,
+        "title": "Bolo Netflix",
+        "price": 50.9,
+        "image": "https://i.pinimg.com/236x/7b/e3/29/7be32927a92a146f450910906916f8fb.jpg"
+      },
+
+      {
+        "id": 3,
+        "title": "Bolo Harry Potter",
+        "price": 50.9,
+        "image": "https://i.pinimg.com/236x/80/70/e6/8070e6f9e3f85e0d48179ea7920b41cd.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Bolo Raposa",
+        "price": 50.9,
+        "image": "https://i.pinimg.com/564x/06/0b/e6/060be690f774ac322882fa00108f413a.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Bolo Vaquinha",
+        "price": 50.9,
+        "image": "https://i.pinimg.com/564x/56/4d/d0/564dd05c7481a642d7421b726e994bb2.jpg"
+      },
+
+      {
+        "id": 6,
+        "title": "Bolo Raposa",
+        "price": 50.9,
+        "image": "https://cdn.peoople.app/image/recommendation/2539343/2539343_240820143450_opt_520.jpg"
       }
     ]
   }

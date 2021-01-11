@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Header from '../../components/Header';
-import {Container} from './styles';
+import {Container, ContainerProduct} from './styles';
 
-const Home = () => {
+const Cart = () => {
   return (
     <Container>
       <Header />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Cart;

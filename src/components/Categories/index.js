@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import api from '../../services/api';
+import {formatPrice} from '../../util/format';
 
 import {
   Container,
@@ -29,21 +31,31 @@ export default class Categories extends Component {
     try {
       const response = await api.get('/products');
 
+      const traditional = response.data.traditional.map((item) => ({
+        ...item,
+        priceFormatted: formatPrice(item.price),
+      }));
+
+      const custom = response.data.custom.map((item) => ({
+        ...item,
+        priceFormatted: formatPrice(item.price),
+      }));
+
       this.setState({
-        traditional: response.data.traditional,
-        themed: response.data.custom,
+        traditional: traditional,
+        themed: custom,
       });
     } catch (err) {
       console.error(err);
     }
   };
 
-  handleAddProduct = (id) => {
-    const navigation = this.props;
+  handleNavigate = (item) => {
+    const {navigation} = this.props;
 
-    navigation.navigate('/cart', {
-      id: id,
-    });
+    console.log(navigation);
+
+    navigation.navigate('Cart', {item});
   };
 
   render() {
@@ -58,8 +70,8 @@ export default class Categories extends Component {
               <Image source={{uri: product.image}} resizeMode="cover" />
               <TitleProduct>{product.title}</TitleProduct>
               <Details>
-                <TitlePrice>R$ {product.price}</TitlePrice>
-                <ButtonAdd onPress={() => this.handleAddProduct(product.id)}>
+                <TitlePrice>{product.priceFormatted}</TitlePrice>
+                <ButtonAdd>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>
@@ -75,8 +87,8 @@ export default class Categories extends Component {
               <Image source={{uri: item.image}} resizeMode="cover" />
               <TitleProduct>{item.title}</TitleProduct>
               <Details>
-                <TitlePrice>R$ {item.price}</TitlePrice>
-                <ButtonAdd>
+                <TitlePrice>{item.priceFormatted}</TitlePrice>
+                <ButtonAdd onPress={() => this.handleNavigate(item)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>

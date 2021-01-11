@@ -4,3 +4,5 @@ export const Container = styled.View`
   flex: 1;
   background-color: #f5f5f5;
 `;
+
+export const ContainerProduct = styled.View``;

@@ -17,7 +17,11 @@ export default function Routes() {
           component={Home}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

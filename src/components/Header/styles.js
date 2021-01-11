@@ -6,6 +6,8 @@ export const Container = styled.View`
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  background-color: #e6ccb2;
+  border-radius: 30px;
 `;
 
 export const Image = styled.Image`

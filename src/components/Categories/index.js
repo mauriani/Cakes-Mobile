@@ -21,7 +21,11 @@ export default class Categories extends Component {
     themed: [],
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.loadingProducts();
+  }
+
+  loadingProducts = async () => {
     try {
       const response = await api.get('/products');
 
@@ -32,7 +36,15 @@ export default class Categories extends Component {
     } catch (err) {
       console.error(err);
     }
-  }
+  };
+
+  handleAddProduct = (id) => {
+    const navigation = this.props;
+
+    navigation.navigate('/cart', {
+      id: id,
+    });
+  };
 
   render() {
     const {traditional, themed} = this.state;
@@ -47,7 +59,7 @@ export default class Categories extends Component {
               <TitleProduct>{product.title}</TitleProduct>
               <Details>
                 <TitlePrice>R$ {product.price}</TitlePrice>
-                <ButtonAdd>
+                <ButtonAdd onPress={() => this.handleAddProduct(product.id)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>

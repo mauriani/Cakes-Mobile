@@ -14,6 +14,7 @@ import {
   TitleProduct,
   ValueProduct,
   SubTotal,
+  SubTotalPriceBold,
   ButtonAdd,
   Input,
   ButtonSub,
@@ -26,6 +27,7 @@ import {
   ContainerCart,
   ContainerCartTitulo,
 } from './styles';
+import {formatPrice} from '../../util/format';
 
 function Cart({cart, removeFromCart, updateAmount}) {
   const cartSize = cart.length;
@@ -53,8 +55,11 @@ function Cart({cart, removeFromCart, updateAmount}) {
                 />
                 <DetailsProduct>
                   <TitleProduct>{product.title}</TitleProduct>
-                  <ValueProduct>{product.title}</ValueProduct>
-                  <SubTotal>{product.price}</SubTotal>
+                  <ValueProduct>{product.priceFormatted}</ValueProduct>
+                  <SubTotal>
+                    Subtotal{' '}
+                    <SubTotalPriceBold>{product.subtotal}</SubTotalPriceBold>
+                  </SubTotal>
 
                   <DetailsAddRemove>
                     <ButtonSub onPress={() => decrement(product)}>
@@ -110,7 +115,10 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(CardActions, dispatch);
 
 const mapStateToProps = (state) => ({
-  cart: state.cart,
+  cart: state.cart.map((product) => ({
+    ...product,
+    subtotal: formatPrice(product.price * product.amount),
+  })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

@@ -31,14 +31,25 @@ export const DetailsProduct = styled.View`
 export const TitleProduct = styled.Text`
   font-size: 17px;
   font-weight: bold;
+  margin-bottom: 6px;
 `;
 
 export const ValueProduct = styled.Text`
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 `;
 
 export const SubTotal = styled.Text`
   font-size: 12px;
+  color: #999;
+  margin-left: 5px;
+`;
+
+export const SubTotalPriceBold = styled.Text`
+  font-weight: bold;
+  color: #111;
+  font-size: 17px;
 `;
 
 export const ButtonAdd = styled.TouchableOpacity`

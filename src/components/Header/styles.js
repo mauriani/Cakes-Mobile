@@ -1,24 +1,30 @@
 import styled from 'styled-components/native';
 
+import {getStatusBarHeight} from 'react-native-iphone-x-helper';
+
 export const Container = styled.View`
-  height: 150px;
+  width: 100%;
+  height: 100px;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  justify-content: space-between;
+  padding-top: ${20 + getStatusBarHeight(true)}px;
   background-color: #e6ccb2;
-  border-radius: 30px;
+  border-radius: 10px;
+  padding: 0 12px;
 `;
 
 export const Image = styled.Image`
   width: 180px;
   height: 80px;
+  margin-top: 20px;
 `;
 
 export const Cart = styled.TouchableOpacity`
   flex: 1;
   align-items: flex-end;
   justify-content: flex-end;
+  margin-top: 20px;
 `;
 
 export const Itens = styled.Text`

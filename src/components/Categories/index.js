@@ -67,7 +67,7 @@ class Categories extends Component {
         <Title>Bolos Tradicionais</Title>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {traditional.map((product) => (
-            <CardProduct key={String(product.id)}>
+            <CardProduct key={product.id}>
               <Image source={{uri: product.image}} resizeMode="cover" />
               <TitleProduct>{product.title}</TitleProduct>
               <Details>
@@ -83,13 +83,13 @@ class Categories extends Component {
 
         <Title>Bolos Temáticos</Title>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {themed.map((product) => (
-            <CardProduct key={String(product.id)}>
-              <Image source={{uri: product.image}} resizeMode="cover" />
-              <TitleProduct>{product.title}</TitleProduct>
+          {themed.map((item) => (
+            <CardProduct key={item.id}>
+              <Image source={{uri: item.image}} resizeMode="cover" />
+              <TitleProduct>{item.title}</TitleProduct>
               <Details>
-                <TitlePrice>{product.priceFormatted}</TitlePrice>
-                <ButtonAdd onPress={() => this.handleAddProduct(product)}>
+                <TitlePrice>{item.priceFormatted}</TitlePrice>
+                <ButtonAdd onPress={() => this.handleAddProduct(item)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>

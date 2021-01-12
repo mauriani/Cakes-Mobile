@@ -104,3 +104,23 @@ export const ButtonFinalizarText = styled.Text`
   font-weight: bold;
   text-transform: uppercase;
 `;
+
+export const ContainerCart = styled.View`
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  margin-top: 20px;
+  padding: 5px;
+  height: 130px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  border-radius: 8px;
+`;
+
+export const ContainerCartTitulo = styled.Text`
+  font-weight: bold;
+  color: #111;
+  font-size: 18px;
+  margin-bottom: 10px;
+`;

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Header from '../../components/Header';
@@ -20,52 +21,84 @@ import {
   Price,
   ButtonFinalizar,
   ButtonFinalizarText,
+  ContainerCart,
+  ContainerCartTitulo,
 } from './styles';
 
-const Cart = () => {
+function Cart({cart}) {
+  const cartSize = cart.length;
+
+  console.log(cartSize);
   return (
     <Container>
       <Header />
-      <Products>
-        <ContainerProduct>
-          <Image
-            source={{
-              uri:
-                'https://cdn.peoople.app/image/recommendation/2539343/2539343_240820143450_opt_520.jpg',
-            }}
-          />
-          <DetailsProduct>
-            <TitleProduct>Bolo de Cenoura</TitleProduct>
-            <ValueProduct>Preço R$ 100,00</ValueProduct>
-            <SubTotal>Subtotal R$ 100,00</SubTotal>
+      {cartSize > 0 ? (
+        <>
+          <Products>
+            {cart.map((product) => (
+              <ContainerProduct key={product.id}>
+                <Image
+                  source={{
+                    uri: product.image,
+                  }}
+                />
+                <DetailsProduct>
+                  <TitleProduct>{product.title}</TitleProduct>
+                  <ValueProduct>{product.title}</ValueProduct>
+                  <SubTotal>{product.price}</SubTotal>
 
-            <DetailsAddRemove>
-              <ButtonAdd>
-                <Icon name="remove-circle-outline" size={25} color="#7f5539" />
-              </ButtonAdd>
+                  <DetailsAddRemove>
+                    <ButtonAdd>
+                      <Icon
+                        name="remove-circle-outline"
+                        size={25}
+                        color="#7f5539"
+                      />
+                    </ButtonAdd>
 
-              <Input readOnly value={'1'} />
+                    <Input readOnly value={'1'} />
 
-              <ButtonSub>
-                <Icon name="add-circle-outline" size={25} color="#7f5539" />
-              </ButtonSub>
-            </DetailsAddRemove>
-          </DetailsProduct>
+                    <ButtonSub>
+                      <Icon
+                        name="add-circle-outline"
+                        size={25}
+                        color="#7f5539"
+                      />
+                    </ButtonSub>
+                  </DetailsAddRemove>
+                </DetailsProduct>
 
-          <ButtonRemove>
-            <Icon name="delete" size={28} color="#7f5539" />
-          </ButtonRemove>
-        </ContainerProduct>
+                <ButtonRemove>
+                  <Icon name="delete" size={28} color="#7f5539" />
+                </ButtonRemove>
+              </ContainerProduct>
+            ))}
 
-        <Total>
-          Total <Price>R$ 100,00</Price>
-        </Total>
-        <ButtonFinalizar>
-          <ButtonFinalizarText>Finalizar Compra</ButtonFinalizarText>
-        </ButtonFinalizar>
-      </Products>
+            <Total>
+              Total <Price>R$ 100,00</Price>
+            </Total>
+            <ButtonFinalizar>
+              <ButtonFinalizarText>Finalizar Compra</ButtonFinalizarText>
+            </ButtonFinalizar>
+          </Products>
+        </>
+      ) : (
+        <>
+          <ContainerCart>
+            <ContainerCartTitulo>
+              Opss... seu carrinho está vazio !
+            </ContainerCartTitulo>
+
+            <Icon name="shopping-cart" size={30} color="#7f5539" />
+          </ContainerCart>
+        </>
+      )}
     </Container>
   );
-};
+}
 
-export default Cart;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);

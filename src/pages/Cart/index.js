@@ -1,7 +1,9 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import * as CardActions from '../../store/modules/cart/actions';
 import Header from '../../components/Header';
 import {
   Container,
@@ -25,10 +27,17 @@ import {
   ContainerCartTitulo,
 } from './styles';
 
-function Cart({cart, dispatch}) {
+function Cart({cart, removeFromCart, updateAmount}) {
   const cartSize = cart.length;
 
-  console.log(cartSize);
+  function increment(product) {
+    updateAmount(product.image, product.amount + 1);
+  }
+
+  function decrement(product) {
+    updateAmount(product.image, product.amount - 1);
+  }
+
   return (
     <Container>
       <Header />
@@ -48,30 +57,27 @@ function Cart({cart, dispatch}) {
                   <SubTotal>{product.price}</SubTotal>
 
                   <DetailsAddRemove>
-                    <ButtonAdd>
+                    <ButtonSub onPress={() => decrement(product)}>
                       <Icon
                         name="remove-circle-outline"
                         size={25}
                         color="#7f5539"
                       />
-                    </ButtonAdd>
+                    </ButtonSub>
 
-                    <Input readOnly value={'1'} />
+                    <Input readOnly value={String(product.amount)} />
 
-                    <ButtonSub>
+                    <ButtonAdd onPress={() => increment(product)}>
                       <Icon
                         name="add-circle-outline"
                         size={25}
                         color="#7f5539"
                       />
-                    </ButtonSub>
+                    </ButtonAdd>
                   </DetailsAddRemove>
                 </DetailsProduct>
 
-                <ButtonRemove
-                  onPress={() =>
-                    dispatch({type: 'REMOVE_FROM_CART', image: product.image})
-                  }>
+                <ButtonRemove onPress={() => removeFromCart(product.image)}>
                   <Icon name="delete" size={28} color="#7f5539" />
                 </ButtonRemove>
               </ContainerProduct>
@@ -100,8 +106,11 @@ function Cart({cart, dispatch}) {
   );
 }
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CardActions, dispatch);
+
 const mapStateToProps = (state) => ({
   cart: state.cart,
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

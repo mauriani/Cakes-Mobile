@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
 import {formatPrice} from '../../util/format';
-import * as CartActions from '../../store/modules/cart/actions';
+import * as CardActions from '../../store/modules/cart/actions';
 
 import {
   Container,
@@ -103,6 +103,6 @@ class Categories extends Component {
 }
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(CartActions, dispatch);
+  bindActionCreators(CardActions, dispatch);
 
 export default connect(null, mapDispatchToProps)(Categories);

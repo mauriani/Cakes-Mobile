@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
 import {formatPrice} from '../../util/format';
+import * as CartActions from '../../store/modules/cart/actions';
 
 import {
   Container,
@@ -52,11 +55,8 @@ class Categories extends Component {
   };
 
   handleAddProduct = (product) => {
-    const {dispatch} = this.props;
-    dispatch({
-      type: 'ADD_TO_CART',
-      product,
-    });
+    const {addToCart} = this.props;
+    addToCart(product);
   };
 
   render() {
@@ -102,4 +102,7 @@ class Categories extends Component {
   }
 }
 
-export default connect()(Categories);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(Categories);

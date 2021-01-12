@@ -25,7 +25,7 @@ import {
   ContainerCartTitulo,
 } from './styles';
 
-function Cart({cart}) {
+function Cart({cart, dispatch}) {
   const cartSize = cart.length;
 
   console.log(cartSize);
@@ -68,7 +68,10 @@ function Cart({cart}) {
                   </DetailsAddRemove>
                 </DetailsProduct>
 
-                <ButtonRemove>
+                <ButtonRemove
+                  onPress={() =>
+                    dispatch({type: 'REMOVE_FROM_CART', image: product.image})
+                  }>
                   <Icon name="delete" size={28} color="#7f5539" />
                 </ButtonRemove>
               </ContainerProduct>

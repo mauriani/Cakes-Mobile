@@ -1,10 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {Container, Image, Cart, Itens} from './styles';
 
-const Header = () => {
+const Header = ({cartSize}) => {
+  console.log(cartSize);
   const navigation = useNavigation();
   return (
     <Container>
@@ -14,10 +16,12 @@ const Header = () => {
       />
       <Cart onPress={() => navigation.navigate('Cart')}>
         <Icon name="shopping-basket" size={28} color="#432818" />
-        <Itens>0</Itens>
+        <Itens>{cartSize}</Itens>
       </Cart>
     </Container>
   );
 };
 
-export default Header;
+export default connect((state) => ({
+  cartSize: state.cart.length,
+}))(Header);

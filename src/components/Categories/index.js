@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
+import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
@@ -17,7 +18,7 @@ import {
   ButtonAddText,
 } from './styles';
 
-export default class Categories extends Component {
+class Categories extends Component {
   state = {
     traditional: [],
     themed: [],
@@ -50,12 +51,12 @@ export default class Categories extends Component {
     }
   };
 
-  handleNavigate = (item) => {
-    const {navigation} = this.props;
-
-    console.log(navigation);
-
-    navigation.navigate('Cart', {item});
+  handleAddProduct = (product) => {
+    const {dispatch} = this.props;
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
   };
 
   render() {
@@ -71,7 +72,7 @@ export default class Categories extends Component {
               <TitleProduct>{product.title}</TitleProduct>
               <Details>
                 <TitlePrice>{product.priceFormatted}</TitlePrice>
-                <ButtonAdd>
+                <ButtonAdd onPress={() => this.handleAddProduct(product)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>
@@ -82,13 +83,13 @@ export default class Categories extends Component {
 
         <Title>Bolos Temáticos</Title>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {themed.map((item) => (
-            <CardProduct key={String(item.id)}>
-              <Image source={{uri: item.image}} resizeMode="cover" />
-              <TitleProduct>{item.title}</TitleProduct>
+          {themed.map((product) => (
+            <CardProduct key={String(product.id)}>
+              <Image source={{uri: product.image}} resizeMode="cover" />
+              <TitleProduct>{product.title}</TitleProduct>
               <Details>
-                <TitlePrice>{item.priceFormatted}</TitlePrice>
-                <ButtonAdd onPress={() => this.handleNavigate(item)}>
+                <TitlePrice>{product.priceFormatted}</TitlePrice>
+                <ButtonAdd onPress={() => this.handleAddProduct(product)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>
@@ -100,3 +101,5 @@ export default class Categories extends Component {
     );
   }
 }
+
+export default connect()(Categories);

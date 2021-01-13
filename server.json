@@ -1,66 +1,40 @@
 {
-  "stock": [
-    {
-      "id": 1,
-      "amount": 3
-    },
-    {
-      "id": 2,
-      "amount": 5
-    },
-    {
-      "id": 3,
-      "amount": 2
-    },
-    {
-      "id": 4,
-      "amount": 1
-    },
-    {
-      "id": 5,
-      "amount": 5
-    },
-    {
-      "id": 6,
-      "amount": 10
-    }
-  ],
   "products": {
     "traditional": [
       {
         "id": 1,
         "title": "Bolo de chocolate",
-        "price": 50.9,
+        "price": 50.0,
         "image": "https://images.unsplash.com/photo-1576243049154-ac7712b09797?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=761&q=80"
       },
       {
         "id": 2,
         "title": "Bolo de Coco",
-        "price": 139.9,
+        "price": 49.9,
         "image": "https://images.unsplash.com/photo-1497681204192-eb12c0702305?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
       },
       {
         "id": 3,
         "title": "Bolo Frutas vermelhas",
-        "price": 219.9,
+        "price": 62.0,
         "image": "https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=335&q=80"
       },
       {
         "id": 5,
         "title": "Bolo de Morango com Recheio de coco",
-        "price": 139.9,
+        "price": 55.9,
         "image": "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80"
       },
       {
         "id": 6,
         "title": "Bolo de Doce de Leite",
-        "price": 119.9,
+        "price": 60.5,
         "image": "https://images.unsplash.com/photo-1601409751311-cbecfe223af4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
       },
       {
         "id": 4,
         "title": "Torta de Limão",
-        "price": 179.9,
+        "price": 39.9,
         "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80"
       }
     ],
@@ -69,47 +43,47 @@
       {
         "id": 1,
         "title": "Bolo Unicórnio",
-        "price": 50.9,
+        "price": 60.0,
         "image": "https://s2.glbimg.com/XiTUs5F-S2EDTkqOVMRy5euUY28=/smart/e.glbimg.com/og/ed/f/original/2019/05/27/bolo-de-unicornio_2.jpg"
       },
 
       {
         "id": 2,
         "title": "Bolo Ovelha",
-        "price": 50.9,
+        "price": 70.0,
         "image": "https://i.pinimg.com/originals/44/cc/45/44cc457ff4e697c2eb4b0b5fddde00a6.jpg"
       },
 
       {
         "id": 3,
         "title": "Bolo Netflix",
-        "price": 50.9,
+        "price": 60.9,
         "image": "https://i.pinimg.com/236x/7b/e3/29/7be32927a92a146f450910906916f8fb.jpg"
       },
 
       {
         "id": 3,
         "title": "Bolo Harry Potter",
-        "price": 50.9,
+        "price": 90.9,
         "image": "https://i.pinimg.com/236x/80/70/e6/8070e6f9e3f85e0d48179ea7920b41cd.jpg"
       },
       {
         "id": 4,
         "title": "Bolo Raposa",
-        "price": 50.9,
+        "price": 80.9,
         "image": "https://i.pinimg.com/564x/06/0b/e6/060be690f774ac322882fa00108f413a.jpg"
       },
       {
         "id": 5,
         "title": "Bolo Vaquinha",
-        "price": 50.9,
+        "price": 100.9,
         "image": "https://i.pinimg.com/564x/56/4d/d0/564dd05c7481a642d7421b726e994bb2.jpg"
       },
 
       {
         "id": 6,
-        "title": "Bolo Raposa",
-        "price": 50.9,
+        "title": "Bolo Chapéu Harry Potter",
+        "price": 110.0,
         "image": "https://cdn.peoople.app/image/recommendation/2539343/2539343_240820143450_opt_520.jpg"
       }
     ]

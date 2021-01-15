@@ -35,19 +35,21 @@ class Categories extends Component {
     try {
       const response = await api.get('/products');
 
-      const traditional = response.data.traditional.map((item) => ({
+      const data = response.data.map((item) => ({
         ...item,
         priceFormatted: formatPrice(item.price),
       }));
-
-      const custom = response.data.custom.map((item) => ({
-        ...item,
-        priceFormatted: formatPrice(item.price),
-      }));
+      // filtra bolos tradicionais
+      const traditional = data.filter(
+        (element) => element.category === 'traditional',
+      );
+      // filtra bolos temáticos
+      const themed = data.filter((element) => element.category === 'themed');
 
       this.setState({
+        data,
         traditional: traditional,
-        themed: custom,
+        themed: themed,
       });
     } catch (err) {
       console.error(err);
@@ -83,13 +85,13 @@ class Categories extends Component {
 
         <Title>Bolos Temáticos</Title>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {themed.map((item) => (
-            <CardProduct key={item.id}>
-              <Image source={{uri: item.image}} resizeMode="cover" />
-              <TitleProduct>{item.title}</TitleProduct>
+          {themed.map((product) => (
+            <CardProduct key={product.id}>
+              <Image source={{uri: product.image}} resizeMode="cover" />
+              <TitleProduct>{product.title}</TitleProduct>
               <Details>
-                <TitlePrice>{item.priceFormatted}</TitlePrice>
-                <ButtonAdd onPress={() => this.handleAddProduct(item)}>
+                <TitlePrice>{product.priceFormatted}</TitlePrice>
+                <ButtonAdd onPress={() => this.handleAddProduct(product)}>
                   <ButtonAddText>Adicionar</ButtonAddText>
                   <Icon name="add-circle-outline" size={28} color="#774936" />
                 </ButtonAdd>

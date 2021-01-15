@@ -4,18 +4,17 @@ import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   width: 100%;
-  height: 100px;
+  height: 120px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: ${20 + getStatusBarHeight(true)}px;
-  background-color: #e6ccb2;
-  border-radius: 10px;
+  background-color: #f4cfdf;
   padding: 0 12px;
 `;
 
 export const Image = styled.Image`
-  width: 180px;
+  width: 230px;
   height: 80px;
   margin-top: 20px;
 `;

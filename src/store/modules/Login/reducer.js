@@ -5,7 +5,6 @@ export default function authenticated(state = false, action) {
   switch (action.type) {
     case 'LOGIN_SUCCESS':
       return true;
-
     default:
       return state;
   }

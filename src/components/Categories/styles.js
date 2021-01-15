@@ -8,9 +8,10 @@ export const Container = styled.ScrollView`
 export const Title = styled.Text`
   font-size: 17px;
   color: #432818;
-  font-weight: bold;
+
   padding: 0 16px;
   margin-top: 10px;
+  font-family: 'Ubuntu-Bold';
 `;
 
 export const CardProduct = styled.View`
@@ -40,9 +41,11 @@ export const Details = styled.View`
 export const TitleProduct = styled.Text.attrs({
   numberOfLines: 2,
 })`
-  padding: 2px;
+  padding: 5px;
+  font-size: 15px;
   margin-top: 3px;
   color: #111;
+  font-family: 'Roboto-Medium';
 `;
 
 export const TitlePrice = styled.Text`
@@ -66,7 +69,7 @@ export const ButtonAdd = styled.TouchableOpacity`
 
 export const ButtonAddText = styled.Text`
   font-size: 15px;
-  font-weight: bold;
   color: #774936;
   margin-right: 10px;
+  font-family: 'Roboto-Bold';
 `;

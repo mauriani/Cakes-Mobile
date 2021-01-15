@@ -13,8 +13,8 @@ export const Avatar = styled.View`
 
 export const Name = styled.Text`
   font-size: 25px;
-  font-weight: bold;
   color: #3b444b;
+  font-family: 'Ubuntu-Regular';
 `;
 
 export const Info = styled.View`
@@ -26,16 +26,24 @@ export const Personal = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-weight: bold;
   padding: 0 10px;
   font-size: 20px;
-  font-family: 'Ubuntu-Regular';
+  font-family: 'Ubuntu-Bold';
+  margin-bottom: 15px;
+`;
+
+export const PersonalDataBold = styled.Text`
+  font-weight: normal;
+  font-size: 15px;
+  padding: 0 13px;
+  font-family: 'Roboto-Bold';
 `;
 
 export const PersonalData = styled.Text`
   font-weight: normal;
   font-size: 15px;
-  padding: 0 13px;
+  padding: 0 20px;
+  font-family: 'Roboto-Medium';
 `;
 
 export const Divider = styled.View`
@@ -43,4 +51,11 @@ export const Divider = styled.View`
   margin-left: 5px;
   margin-top: 10px;
   background-color: #333;
+`;
+
+export const DividerList = styled.View`
+  margin-top: 8px;
+  left: 5px;
+  height: 1.2px;
+  background-color: #969696;
 `;

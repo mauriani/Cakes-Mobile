@@ -5,17 +5,17 @@ export function addToCart(product) {
   };
 }
 
-export function removeFromCart(image) {
+export function removeFromCart(id) {
   return {
     type: '@cart/REMOVE',
-    image,
+    id,
   };
 }
 
-export function updateAmount(image, amount) {
+export function updateAmount(id, amount) {
   return {
     type: '@cart/UPDATE_AMOUNT',
-    image,
+    id,
     amount,
   };
 }

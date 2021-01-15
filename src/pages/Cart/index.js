@@ -33,11 +33,11 @@ function Cart({cart, removeFromCart, updateAmount, total}) {
   const cartSize = cart.length;
 
   function increment(product) {
-    updateAmount(product.image, product.amount + 1);
+    updateAmount(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateAmount(product.image, product.amount - 1);
+    updateAmount(product.id, product.amount - 1);
   }
 
   return (
@@ -82,7 +82,7 @@ function Cart({cart, removeFromCart, updateAmount, total}) {
                   </DetailsAddRemove>
                 </DetailsProduct>
 
-                <ButtonRemove onPress={() => removeFromCart(product.image)}>
+                <ButtonRemove onPress={() => removeFromCart(product.id)}>
                   <Icon name="delete" size={28} color="#7f5539" />
                 </ButtonRemove>
               </ContainerProduct>

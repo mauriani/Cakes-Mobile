@@ -9,7 +9,7 @@ import PayButton from './components/PayButton';
 
 const Tab = createBottomTabNavigator();
 
-//import Login from './pages/Login';
+import Login from './pages/Login';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Perfil from './pages/Perfil';
@@ -18,6 +18,7 @@ export default function Routes() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        initialRouteName="Login"
         screenOptions={({route, navigation}) => ({
           tabBarIcon: ({color, size, focused}) => {
             let iconName;

@@ -5,9 +5,7 @@ export default function cart(state = [], action) {
   switch (action.type) {
     case '@cart/ADD':
       return produce(state, (draft) => {
-        const productIndex = draft.findIndex(
-          (p) => p.image === action.product.image,
-        );
+        const productIndex = draft.findIndex((p) => p.id === action.product.id);
         if (productIndex >= 0) {
           draft[productIndex].amount += 1;
         } else {
@@ -16,7 +14,7 @@ export default function cart(state = [], action) {
       });
     case '@cart/REMOVE':
       return produce(state, (draft) => {
-        const productIndex = draft.findIndex((p) => p.image === action.image);
+        const productIndex = draft.findIndex((p) => p.id === action.id);
 
         if (productIndex >= 0) {
           draft.splice(productIndex, 1);
@@ -29,7 +27,7 @@ export default function cart(state = [], action) {
       }
 
       return produce(state, (draft) => {
-        const productIndex = draft.findIndex((p) => p.image === action.image);
+        const productIndex = draft.findIndex((p) => p.id === action.id);
         if (productIndex >= 0) {
           draft[productIndex].amount = Number(action.amount);
         }

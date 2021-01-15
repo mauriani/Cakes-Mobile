@@ -1,6 +1,7 @@
-import {set} from 'immer/dist/internal';
 import React, {Component} from 'react';
 import AvatarSocial from 'react-native-avatar-social';
+
+import api from '../../services/api';
 
 import {
   Container,
@@ -18,6 +19,10 @@ export default class Perdil extends Component {
     users: [],
   };
 
+  componentDidMount() {
+    this.loadingUser();
+  }
+
   loadingUser = async () => {
     const response = await api.get('/user');
     this.setState({
@@ -26,7 +31,7 @@ export default class Perdil extends Component {
   };
 
   render() {
-    const {user} = this.state;
+    const {users} = this.state;
     console.log(users);
     return (
       <Container>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import {useDispatch} from 'react-redux';
 import * as LoginActions from '../../store/modules/Login/actions';
 
@@ -12,48 +12,59 @@ import {
   SubmitButtonText,
 } from './styles';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default class Perdil extends Component {
+  state = {
+    email: '',
+    password: '',
+  };
 
-  const dispatch = useDispatch();
+  handleSbmit = () => {
+    const {email, password} = this.state;
 
-  function signIn(username, password) {
-    dispatch(LoginActions.loginRequest(username, password));
-  }
-  console.log(username, password);
-  return (
-    <Container>
-      <Form>
-        <ContainerImage>
-          <Image
-            source={require('../../assets/image/logo.png')}
-            resizeMode="cover"
+    // SAGA DEPOIS
+  };
+
+  render() {
+    const {email, password} = this.state;
+
+    return (
+      <Container>
+        <Form>
+          <ContainerImage>
+            <Image
+              source={require('../../assets/image/logo.png')}
+              resizeMode="cover"
+            />
+          </ContainerImage>
+
+          <Input
+            placeholder="Usuário"
+            onChangeText={(email) => this.setState({email: email})}
+            placeholderTextColor="#5c3015"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            underlineColorAndroid="transparent"
+            autoCorrect={false}
+            value={email}
+            returnKeyType="next"
+            onSubmitEditing={() => passwordInput.focus()}
           />
-        </ContainerImage>
+          <Input
+            placeholder="Senha"
+            placeholderTextColor="#5c3015"
+            secureTextEntry={true}
+            value={password}
+            autoCorrect={false}
+            returnKeyType="send"
+            ref={(el) => (passwordInput = el)}
+            onChangeText={(password) => this.setState({password: password})}
+          />
 
-        <Input
-          placeholder="Usuário"
-          placeholderTextColor="#5c3015"
-          autoCorrect={false}
-          value={username}
-          onChangeText={(username) => setUsername(username)}
-        />
-        <Input
-          placeholder="Senha"
-          placeholderTextColor="#5c3015"
-          secureTextEntry={true}
-          value={password}
-          autoCorrect={false}
-          onChangeText={(password) => setPassword(password)}
-        />
-
-        <SubmitButton onPress={() => signIn(username, password)}>
-          <SubmitButtonText>ACESSAR</SubmitButtonText>
-        </SubmitButton>
-      </Form>
-    </Container>
-  );
-};
-
-export default Login;
+          <SubmitButton onPress={() => this.handleSbmit(email, password)}>
+            <SubmitButtonText>ACESSAR</SubmitButtonText>
+          </SubmitButton>
+        </Form>
+      </Container>
+    );
+  }
+}

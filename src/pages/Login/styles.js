@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #bc906a;
+  background-color: #f4cfdf;
   justify-content: center;
 `;
 
@@ -21,8 +21,8 @@ export const ContainerImage = styled.View`
 `;
 
 export const Image = styled.Image`
-  width: 180px;
-  height: 80px;
+  width: 290px;
+  height: 100px;
 `;
 
 export const Input = styled.TextInput`

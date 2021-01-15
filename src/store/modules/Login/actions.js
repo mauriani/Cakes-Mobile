@@ -1,15 +1,9 @@
-export function loginRequest(username, password) {
+export function loginRequest(email, password) {
   return {
-    type: 'LOGIN_REQUEST',
-    username,
-    password,
-  };
-}
-
-export function loginSucess(username, password) {
-  return {
-    type: 'LOGIN_SUCCESS',
-    username,
-    password,
+    type: 'LOGIN',
+    payload: {
+      email,
+      password,
+    },
   };
 }

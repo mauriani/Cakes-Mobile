@@ -4,6 +4,8 @@ export const Container = styled.View`
   flex: 1;
 `;
 
+export const User = styled.View``;
+
 export const Avatar = styled.View`
   align-items: center;
   justify-content: center;

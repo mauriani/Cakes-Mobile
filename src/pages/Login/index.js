@@ -25,6 +25,8 @@ export default class Perdil extends Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
+
     const {email, password} = this.state;
 
     return (
@@ -60,7 +62,7 @@ export default class Perdil extends Component {
             onChangeText={(password) => this.setState({password: password})}
           />
 
-          <SubmitButton onPress={() => this.handleSbmit(email, password)}>
+          <SubmitButton onPress={() => navigate('Home')}>
             <SubmitButtonText>ACESSAR</SubmitButtonText>
           </SubmitButton>
         </Form>
